@@ -1,0 +1,15 @@
+#tituloPrincipal{
+    color:blueviolet;
+}
+.formatoParrafo
+{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+h1, p{
+    background-color: aquamarine;
+}
+* {
+    font-style: italic;
+}
