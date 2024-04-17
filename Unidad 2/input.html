@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input</title>
+</head>
+<body>
+    <h1>Input Disponibles</h1>
+    <h3>Texto</h3>
+    <input type="text" name="txtNombre">
+    <input type="text" name="txtApellido" maxlength="15">
+    <input type="text" placeholder="Ingrese su nombre">
+    <input type="text" title="Debe ingresar su nombre">
+    <input type="text" value="Pedro">
+    <input type="text" size="2">
+
+    <input type="text" value="500" readonly="readonly">
+    <input type="text" value="500" disabled>
+
+    <h3>Numericos</h3>
+    <input type="number">
+    <input type="number" min="10" max="70" step="5">
+
+    <h3>Calendario y hora</h3>
+    <input type="date">
+    <input type="time">
+    <input type="datetime-local">
+    <input type="week">
+    <input type="month">
+
+    <h3>Otros</h3>
+    <input type="search">
+    <input type="password">
+    <input type="hidden">
+    <input type="color">
+
+<form action="">    
+    <input type="email">
+    <input type="url">
+    <input type="tel">
+    <input type="submit"  value="enviar">
+</form>
+
+    <h3>Subir archivos al servidor</h3>
+    <input type="file" accept=".pptx, .pdf">
+
+    <h3>Opciones</h3>
+    <label for="">Serie Favoritas</label>
+    <input type="checkbox" name="chkSerie" value="1">GOT
+    <input type="checkbox" name="chkSerie" value="2">xFile
+    <input type="checkbox" name="chkSerie" value="3">Breaking Bad
+    <input type="checkbox" name="chkSerie" value="4">Viking
+    <br>
+    <label for="">Serie Favorita</label>
+    <input type="radio" name="rdoAnime" value="1">Robotech
+    <input type="radio" name="rdoAnime" value="2">One Peace
+    <input type="radio" name="rdoAnime" value="3">Shingeki no Kiojin
+    <input type="radio" name="rdoAnime" value="4">One Punch Man
+    <br>
+    <label for="lstPeliculas">Peliculas</label>
+    <select name="cmbPeliculas" id="lstPeliculas">
+        <option value="0">Seleccionar</option>
+        <option value="1">La vida es bella</option>
+        <option value="2">Hable  con ella</option>
+        <option value="3" selected>Oppenheimmer</option>
+    </select>
+</body>
+</html>
