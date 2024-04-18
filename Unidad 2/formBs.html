@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Registro de cliente</h1>
+        <div class="row">
+            <div class="col-12 col-md-1 offset-md-3">Rut</div>
+            <div class="col-9 col-md-4">
+                <input type="text" name="txtRut" class="form-control" maxlength="9">
+            </div>
+            <div class="col-3 col-md-1">
+                <input type="text" name="txtDv" class="form-control" maxlength="1">
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-12 col-md-1 offset-md-3">Nombre</div>
+            <div class="col-12 col-md-5">
+                <input type="text" name="txtNombre" class="form-control" maxlength="9">
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-12 col-md-1 offset-md-3">Series</div>
+            <div class="col-12 col-md-5">
+                <input type="checkbox" name="chkSerie" class="form-check-input" value="1">GOT
+                <input type="checkbox" name="chkSerie" class="form-check-input ms-3" value="2">xFile
+                <input type="checkbox" name="chkSerie" class="form-check-input ms-3" value="3">Breaking Bad
+                <input type="checkbox" name="chkSerie" class="form-check-input ms-3" value="4">Viking
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-12 col-md-1 offset-md-3">Series</div>
+            <div class="col-12 col-md-5 form-switch">
+                <input type="checkbox" name="chkSerie" class="form-check-input ms-1" value="1">GOT
+                <input type="checkbox" name="chkSerie" class="form-check-input ms-3" value="2">xFile
+                <input type="checkbox" name="chkSerie" class="form-check-input ms-3" value="3">Breaking Bad
+                <input type="checkbox" name="chkSerie" class="form-check-input ms-3" value="4">Viking
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-12 col-md-1 offset-md-3">Series</div>
+            <div class="col-12 col-md-5">
+                <input type="radio" name="rdoAnime" class="form-check-input" value="1">Robotech
+                <input type="radio" name="rdoAnime" class="form-check-input ms-3" value="2">One Peace
+                <input type="radio" name="rdoAnime" class="form-check-input ms-3" value="3">Shingeki no Kyojin
+                <input type="radio" name="rdoAnime" class="form-check-input ms-3" value="4">One Punch Man
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-12 col-md-6 offset-md-3">
+                <label for="txtDireccion">Dirección</label>
+                <input type="text" name="txtDireccion" id="txtDireccion" class="form-control">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
