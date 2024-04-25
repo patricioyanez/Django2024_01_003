@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones JS</title>
+</head>
+<body>
+    <input type="text" id="txtNumero1"><br>
+    <input type="text" id="txtNumero2"><br>
+    <button onclick="sumar();">Sumar</button><br>
+    <label for="" id="lblResultado"></label>
+
+    <script>
+        function sumar()
+        {
+            let n1 = document.getElementById("txtNumero1").value;
+            let n2 = document.getElementById("txtNumero2").value;
+            let resultado = parseInt(n1) + parseInt(n2);
+            document.getElementById("lblResultado").innerHTML = resultado
+        }
+    </script>
+</body>
+</html>
