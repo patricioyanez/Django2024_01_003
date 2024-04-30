@@ -18,7 +18,7 @@ $(function(){
         else if($('.txtClave').val() == "")
         {
             alert('No especificó la clave');
-        }else if(!(/[a-zA-Z][d]/.test($('.txtClave').val())))
+        }else if(!(/^[a-zA-Z0-9]+$/.test($('.txtClave').val())))
         {
             alert('El formato de la clave no es válido');
         }
