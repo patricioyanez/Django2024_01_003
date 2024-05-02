@@ -9,11 +9,19 @@
     <title>Consumo de Api Rest</title>
     <script>
         $(function(){
+// Ejercicio: buscar los nombres de las comidas según texto que entregue el usuario
+// URL o recurso que permita la busqueda
+// crear otro documento HTML para mostrar la información
             $('.btnEnviar').click(function(){
                 $.get('https://www.themealdb.com/api/json/v1/1/categories.php', 
                 function(data){
                     $.each(data.categories, function(i, item){
-                        console.log(item.strCategory);
+                        //console.log(item.strCategory);
+                        $('.table').append("<tr><td><img src='" + item.strCategoryThumb + "'>" +
+                            "<td>" + item.idCategory +
+                            "<td>" + item.strCategory +
+                            "<td>" + item.strCategoryDescription
+                        )
                     })
                 })
             })
