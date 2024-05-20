@@ -1,0 +1,17 @@
+python -m venv MiEntorno
+cd MiEntorno
+cd Scripts
+activate
+pip install django
+
+cd..
+cd.. (llegar a la raiz de carpeta de trabajo (mientorno))
+django-admin startproject instituto
+cd instituto
+dir (confirmar si esta el archivo manage.py)
+py manage.py runserver (ir a la url para ver el cohete)
+(abrir otra terminal)
+cd instituto
+dir (confirmar si esta el archivo manage.py)
+py manage.py startapp alumno
+(configurar settings.py)
