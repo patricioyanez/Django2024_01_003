@@ -4,7 +4,7 @@ from django.db import models
 # py manage.py makemigrations crud
 # 2.- ejecutar la migración
 # py manage.py migrate
-
+# bajar extension: sqlLite3 editor o similar
 # revisar la documentación para ver otros tipos de datos
 
 # Create your models here.
