@@ -1,0 +1,5 @@
+# PASOS:
+# 1.- preparar la migración
+# py manage.py makemigrations crud
+# 2.- ejecutar la migración
+# py manage.py migrate
