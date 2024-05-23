@@ -2,10 +2,10 @@ from django.db import models
 # PASOS:
 # 1.- preparar la migración
 # py manage.py makemigrations crud
-# 2.- ejecutar la migración
+# 2.- ejecutar la migración (traspaso a la base de datos)
 # py manage.py migrate
 # bajar extension: sqlLite3 editor o similar
-# revisar la documentación para ver otros tipos de datos
+# revisar la documentación para ver otros tipos de datos para agregar a models
 
 # Create your models here.
 class Escuela(models.Model):
