@@ -16,4 +16,4 @@ py manage.py runserver (ir a la url para ver el cohete)
 cd instituto
 dir (confirmar si esta el archivo manage.py)
 py manage.py startapp alumno
-(configurar settings.py)
+agregar la aplicacion y cambiar el idioma en settings.py

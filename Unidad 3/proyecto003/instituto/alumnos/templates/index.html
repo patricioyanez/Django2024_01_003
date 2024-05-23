@@ -7,5 +7,12 @@
 </head>
 <body>
     <h1>Holaaaa estudiantes...</h1>
+
+    {% for alumno in alumnos  %}
+        {{ alumno.nombre| upper }} - {{alumno.apellido1}}
+    {% endfor %}
+    {# Tarea: Agregar la lista de alumnos en una tabla (hmtl) todos sus datos  #}
+    {#  todos los nombres tiene que estar capitalizado #}
+    {# buscar mas instrucciones del lenguaje de plantilla de django #}
 </body>
 </html>

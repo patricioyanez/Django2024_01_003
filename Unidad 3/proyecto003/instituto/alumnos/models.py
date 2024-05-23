@@ -1,10 +1,10 @@
 from django.db import models
 # PASOS:
 # 1.- preparar la migración
-# py manage.py makemigrations crud
+# py manage.py makemigrations alumnos
 # 2.- ejecutar la migración (traspaso a la base de datos)
 # py manage.py migrate
-# bajar extension: sqlLite3 editor o similar
+# 3.- bajar extension: sqlLite3 editor o similar y
 # revisar la documentación para ver otros tipos de datos para agregar a models
 
 # Create your models here.
@@ -22,7 +22,7 @@ class Carrera(models.Model):
     activo      = models.IntegerField()
     
     def __str__(self):
-        return self.escuela.nombre + " " + self.nombre
+        return self.escuela.nombre + " : " + self.nombre
 
 class Alumno(models.Model):
     carrera     = models.ForeignKey('Carrera', on_delete=models.CASCADE, db_column='id')
@@ -38,4 +38,4 @@ class Alumno(models.Model):
     activo      = models.IntegerField()
     
     def __str__(self):
-        return self.rut + "-" + self.dv
+        return self.rut + "-" + self.dv + " " + self.nombre + " " +self.apellido1

@@ -1,0 +1,9 @@
+1.- ir a http://127.0.0.1:8000/admin
+2.- crear un usuario para el admin en la consola
+ir a la carpeta del proyecto (donde esta manage.py)
+py manage.py createsuperuser
+omitir validacion de clave
+
+3.- loguearse en la pagina
+
+4.- agregar crud en admin.py

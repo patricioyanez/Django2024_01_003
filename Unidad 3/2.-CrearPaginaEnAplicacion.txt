@@ -1,0 +1,10 @@
+1.- Dentro de aplicacion crear carpeta templates
+2.- Crear archivo index.html
+3.- definir contenido completo de pagina web
+
+4.- crear archivo urls.py en aplicacion
+5.- definir los codigos
+
+6.- crear la vista
+7.- agregar la urls de la aplicacion en la urls del proyecto
+8.- verificar que la aplicación este configurada en el settings.py
