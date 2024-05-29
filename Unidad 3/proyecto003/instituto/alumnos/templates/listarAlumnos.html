@@ -1,0 +1,32 @@
+{% extends "plantillaBase.html"  %}
+{% block tituloPestana %} Listado de alumnos {% endblock %}
+{% block tituloPrincipal %} Alumnos {% endblock %}
+{% block mensaje    %}
+{% endblock %}
+{% block contenido  %}
+{% endblock %}
+{% block listado    %}
+    {# agregar la tabla completa de listado de alumnos #}
+
+    <table>
+        <tr>
+            <th>Rut</th>
+            <th>Nombre completo</th>
+            <th>Fecha nacimiento</th>
+            <th>Fono</th>
+            <th>Dirección</th>
+            <th>Email</th>
+            <th>Activo</th>
+        </tr>
+    {% for alumno in alumnos  %}
+        <tr>
+            <td>{{ alumno.rut}}-{{alumno.dv}}</td>
+            <td>{{ alumno.nombre| capfirst }} {{alumno.apellido1| title }} {{alumno.apellido2| capfirst }}</td>
+            <td>{{ alumno.nacimiento }}</td>
+            <td>{{ alumno.fono }}</td>
+            <td>{{ alumno.direccion }}</td>
+            <td>{{ alumno.email }}</td>
+            <td>{{ alumno.activo|yesno:"Si,No" }}</td>
+    {% endfor %}
+    </table>
+{% endblock %}

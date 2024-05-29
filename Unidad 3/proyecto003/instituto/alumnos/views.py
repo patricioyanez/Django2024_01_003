@@ -17,4 +17,4 @@ def listarAlumnos(request):
 
     context = {'alumnos': alumnos}
 
-    return render(request, 'index.html', context)
+    return render(request, 'listarAlumnos.html', context)
