@@ -7,10 +7,27 @@
 </head>
 <body>
     <h1>Holaaaa estudiantes...</h1>
-
+    <table>
+        <tr>
+            <th>Rut</th>
+            <th>Nombre completo</th>
+            <th>Fecha nacimiento</th>
+            <th>Fono</th>
+            <th>Dirección</th>
+            <th>Email</th>
+            <th>Activo</th>
+        </tr>
     {% for alumno in alumnos  %}
-        {{ alumno.nombre| upper }} - {{alumno.apellido1}}
+        <tr>
+            <td>{{ alumno.rut}}-{{alumno.dv}}</td>
+            <td>{{ alumno.nombre| capfirst }} {{alumno.apellido1| title }} {{alumno.apellido2| capfirst }}</td>
+            <td>{{ alumno.nacimiento }}</td>
+            <td>{{ alumno.fono }}</td>
+            <td>{{ alumno.direccion }}</td>
+            <td>{{ alumno.email }}</td>
+            <td>{{ alumno.activo|yesno:"Si,No" }}</td>
     {% endfor %}
+    </table>
     {# Tarea: Agregar la lista de alumnos en una tabla (hmtl) todos sus datos  #}
     {#  todos los nombres tiene que estar capitalizado #}
     {# buscar mas instrucciones del lenguaje de plantilla de django #}
