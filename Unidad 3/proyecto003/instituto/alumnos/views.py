@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Alumno
+from .models import Alumno, Carrera
 # Create your views here.
 def menu(request):
     return render(request, 'plantillaBase.html', {})
@@ -18,3 +18,12 @@ def listarAlumnos(request):
     context = {'alumnos': alumnos}
 
     return render(request, 'listarAlumnos.html', context)
+
+def listarCarrera(request):
+    # utilizar ORM de Django
+    # select * from alumno
+    listado = Carrera.objects.all()
+
+    context = {'listado': listado}
+
+    return render(request, 'listarCarrera.html', context)

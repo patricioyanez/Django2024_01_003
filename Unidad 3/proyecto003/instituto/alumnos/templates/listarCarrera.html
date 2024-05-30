@@ -1,0 +1,24 @@
+{% extends "plantillaBase.html"  %}
+{% block tituloPestana %} Listado de carrera {% endblock %}
+{% block tituloPrincipal %} Carrera {% endblock %}
+{% block mensaje    %}
+{% endblock %}
+{% block contenido  %}
+{% endblock %}
+{% block listado    %}
+    <table class="table table-responsive table-striped">
+        <tr>
+            <th>Escuela</th>
+            <th>Nombre</th>
+            <th>Versión</th>
+            <th>Activo</th>
+        </tr>
+    {% for item in listado  %}
+        <tr>
+            <td>{{ item.escuela.nombre| title }}</td>
+            <td>{{ item.nombre| capfirst }}</td>
+            <td>{{ item.version }}</td>
+            <td>{{ item.activo|yesno:"Si,No" }}</td>
+    {% endfor %}
+    </table>
+{% endblock %}
