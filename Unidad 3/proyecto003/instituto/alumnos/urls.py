@@ -7,4 +7,5 @@ urlpatterns = [
     path('index', views.index, name='index'),# http://127.0.0.1:8000/alumnos/index
     path('listarAlumnos', views.listarAlumnos, name='listarAlumnos'), 
     path('listarCarrera', views.listarCarrera, name='listarCarrera'), 
+    path('listarEscuela', views.listarEscuela, name='listarEscuela'), 
     ]
