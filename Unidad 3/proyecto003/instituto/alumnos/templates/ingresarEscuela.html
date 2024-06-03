@@ -1,0 +1,28 @@
+{% extends "plantillaBase.html"  %}
+{% block tituloPestana %} Escuela {% endblock %}
+{% block tituloPrincipal %} Escuela {% endblock %}
+{% block mensaje    %}
+{% endblock %}
+{% block contenido  %}
+    <div class="row">
+        <div class="col-12 col-md-2 offset-md-3">Nombre</div>
+        <div class="col-12 col-md-5">
+            <input type="text" name="txtNombre" class="form-control">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-2 offset-md-3">Activo</div>
+        <div class="col-12 col-md-5">
+            <input type="checkbox" name="chkActivo" class="form-check">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-2 offset-md-3">Opciones</div>
+        <div class="col-12 col-md-5">
+            <input type="submit" name="btnGuardar" class="btn btn-danger" value="Guardar">
+            <input type="submit" name="btnLimpiar" class="btn btn-outline-secondary" value="Limpiar">
+        </div>
+    </div>
+{% endblock %}
+{% block listado    %}
+{% endblock %}

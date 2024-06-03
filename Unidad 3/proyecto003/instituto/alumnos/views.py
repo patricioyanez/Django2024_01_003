@@ -28,3 +28,6 @@ def listarEscuela(request):
     listado = Escuela.objects.all()
     context = {'listado': listado}
     return render(request, 'listarEscuela.html', context)
+
+def ingresarEscuela(request):
+    return render(request, 'ingresarEscuela.html', {})
