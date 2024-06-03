@@ -12,11 +12,15 @@
         <tr>
             <th>Nombre</th>
             <th>Activo</th>
+            <th>Modificar</th>
+            <th>Eliminar</th>
         </tr>
     {% for item in listado  %}
         <tr>
             <td>{{ item.nombre| capfirst }}</td>
             <td>{{ item.activo|yesno:"Si,No" }}</td>
+            <td><a href="#" class="btn btn-warning">Modificar</a></td>
+            <td><a href="#" class="btn btn-danger">Eliminar</a></td>
     {% endfor %}
     </table>
 {% endblock %}
