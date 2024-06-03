@@ -1,0 +1,42 @@
+{% extends "plantillaBase.html"  %}
+{% block tituloPestana %} Carrera {% endblock %}
+{% block tituloPrincipal %} Carrera {% endblock %}
+{% block mensaje    %}
+{% endblock %}
+{% block contenido  %}
+<div class="row">
+    <div class="col-12 col-md-2 offset-md-3">Escuela</div>
+    <div class="col-12 col-md-5">
+        <select name="cmbEscuela" class="form-select">
+            <option value="0">Seleccionar...</option>
+            {% for item in escuelas %}
+                <option value="{{item.pk}}">{{item.nombre}}</option>
+            {% endfor%}
+        </select>
+    </div>
+</div>
+    <div class="row">
+        <div class="col-12 col-md-2 offset-md-3">Nombre</div>
+        <div class="col-12 col-md-5">
+            <input type="text" name="txtNombre" class="form-control">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-2 offset-md-3">Activo</div>
+        <div class="col-12 col-md-5">
+            <input type="checkbox" name="chkActivo" class="form-check">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-2 offset-md-3">Opciones</div>
+        <div class="col-12 col-md-5">
+            <input type="submit" name="btnGuardar" class="btn btn-danger" value="Guardar">
+            <input type="submit" name="btnLimpiar" class="btn btn-outline-secondary" value="Limpiar">
+            <a href="{% url 'listarCarrera' %}" class="btn btn-success">Listar</a>
+        </div>
+    </div>
+{% endblock %}
+{% block listado    %}
+{% endblock %}
+
+{# crear formulario para carrera y alumno. agregar los link #}

@@ -31,3 +31,7 @@ def listarEscuela(request):
 
 def ingresarEscuela(request):
     return render(request, 'ingresarEscuela.html', {})
+def ingresarCarrera(request):
+    escuelas = Escuela.objects.all()
+    context = {'escuelas': escuelas}
+    return render(request, 'ingresarCarrera.html', context)
