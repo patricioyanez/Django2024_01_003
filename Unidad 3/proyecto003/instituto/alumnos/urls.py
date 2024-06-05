@@ -10,4 +10,5 @@ urlpatterns = [
     path('listarEscuela', views.listarEscuela, name='listarEscuela'), 
     path('ingresarEscuela', views.ingresarEscuela, name='ingresarEscuela'), 
     path('ingresarCarrera', views.ingresarCarrera, name='ingresarCarrera'), 
+    path('eliminarEscuela/<str:pk>', views.eliminarEscuela, name='eliminarEscuela'), 
     ]
