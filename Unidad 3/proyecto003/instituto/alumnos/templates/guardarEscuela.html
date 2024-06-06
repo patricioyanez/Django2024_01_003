@@ -21,13 +21,14 @@
         <div class="row">
             <div class="col-12 col-md-2 offset-md-3">Nombre</div>
             <div class="col-12 col-md-5">
-                <input type="text" name="txtNombre" class="form-control">
+                <input type="hidden" name="txtId" value="0{{item.id}}">
+                <input type="text" name="txtNombre" class="form-control" value="{{item.nombre}}">
             </div>
         </div>
         <div class="row">
             <div class="col-12 col-md-2 offset-md-3">Activo</div>
             <div class="col-12 col-md-5">
-                <input type="checkbox" name="chkActivo" class="form-check">
+                <input type="checkbox" name="chkActivo" class="form-check" {{item.activo|yesno:"checked," }} >
             </div>
         </div>
         <div class="row">

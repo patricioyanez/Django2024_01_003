@@ -31,6 +31,7 @@ def listarEscuela(request):
 
 def ingresarEscuela(request):
     return render(request, 'ingresarEscuela.html', {})
+
 def ingresarCarrera(request):
     escuelas = Escuela.objects.all()
     context = {'escuelas': escuelas}
@@ -57,5 +58,15 @@ def guardarEscuela(request):
         if 'btnGuardar' in request.POST:
             Escuela.objects.create(nombre=nombre, activo=activo)        
             context['exito'] = "Los datos fueron guardados"
+
+    return render(request, 'guardarEscuela.html', context)
+
+def buscarEscuela(request, pk):
+    context = {}
+    try:
+        item = Escuela.objects.get(pk = pk)
+        context['item'] = item
+    except:
+        context['error'] = 'Error al buscar el registro'
 
     return render(request, 'guardarEscuela.html', context)
