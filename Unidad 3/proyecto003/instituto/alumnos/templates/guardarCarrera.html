@@ -2,6 +2,18 @@
 {% block tituloPestana %} Carrera {% endblock %}
 {% block tituloPrincipal %} Carrera {% endblock %}
 {% block mensaje    %}
+    {% if exito %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{exito}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endif %}
+    {% if error %}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        {{error}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endif %}
 {% endblock %}
 {% block contenido  %}
 <div class="row">

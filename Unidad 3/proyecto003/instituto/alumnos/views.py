@@ -34,7 +34,7 @@ def ingresarEscuela(request):
 def ingresarCarrera(request):
     escuelas = Escuela.objects.all()
     context = {'escuelas': escuelas}
-    return render(request, 'ingresarCarrera.html', context)
+    return render(request, 'guardarCarrera.html', context)
 
 def eliminarEscuela(request, pk):
     context = {}
@@ -49,8 +49,8 @@ def eliminarEscuela(request, pk):
     return render(request, 'listarEscuela.html', context)
 
 def guardarEscuela(request):
+    context = {}
     if request.method == 'POST':
-        context = {}
         nombre = request.POST['txtNombre']
         activo = 'chkActivo' in request.POST
 
@@ -58,4 +58,4 @@ def guardarEscuela(request):
             Escuela.objects.create(nombre=nombre, activo=activo)        
             context['exito'] = "Los datos fueron guardados"
 
-    return render(request, 'ingresarEscuela.html', context)
+    return render(request, 'guardarEscuela.html', context)
