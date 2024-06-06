@@ -11,7 +11,7 @@ from django.db import models
 
 # Create your models here.
 class Escuela(models.Model):
-    nombre      = models.CharField(max_length=100)
+    nombre      = models.CharField(max_length=100, unique=True)
     activo      = models.IntegerField()
 
     def __str__(self):
@@ -19,7 +19,7 @@ class Escuela(models.Model):
 
 class Carrera(models.Model):
     escuela     = models.ForeignKey('Escuela', on_delete=models.CASCADE)
-    nombre      = models.CharField(max_length=100)
+    nombre      = models.CharField(max_length=100, unique=True)
     version     = models.IntegerField()
     activo      = models.IntegerField()
     
@@ -36,7 +36,7 @@ class Alumno(models.Model):
     nacimiento  = models.DateField()
     fono        = models.CharField(max_length=50)
     direccion   = models.CharField(max_length=200)
-    email       = models.CharField(max_length=100)
+    email       = models.CharField(max_length=100, unique=True)
     activo      = models.IntegerField()
     
     def __str__(self):
