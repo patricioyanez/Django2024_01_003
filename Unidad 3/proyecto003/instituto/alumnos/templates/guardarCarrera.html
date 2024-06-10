@@ -23,8 +23,8 @@
             <div class="col-12 col-md-5">
                 <select name="cmbEscuela" class="form-select">
                     <option value="0">Seleccionar...</option>
-                    {% for item in escuelas %}
-                        <option value="{{item.pk}}">{{item.nombre}}</option>
+                    {% for objecto in escuelas %}
+                        <option value="{{objecto.pk}}" {% if objecto.id == item.escuela.id %}selected {% endif %}>{{objecto.nombre}}</option>
                     {% endfor%}
                 </select>
             </div>
@@ -32,19 +32,20 @@
         <div class="row">
             <div class="col-12 col-md-2 offset-md-3">Nombre</div>
             <div class="col-12 col-md-5">
-                <input type="text" name="txtNombre" class="form-control">
+                <input type="hidden" name="txtId" class="form-control" value="{{item.id}}">
+                <input type="text" name="txtNombre" class="form-control" value="{{item.nombre}}">
             </div>
         </div>
         <div class="row">
             <div class="col-12 col-md-2 offset-md-3">Versión</div>
             <div class="col-12 col-md-5">
-                <input type="text" name="txtVersion" class="form-control">
+                <input type="text" name="txtVersion" class="form-control" value="{{item.version}}">
             </div>
         </div>
         <div class="row">
             <div class="col-12 col-md-2 offset-md-3">Activo</div>
             <div class="col-12 col-md-5">
-                <input type="checkbox" name="chkActivo" class="form-check">
+                <input type="checkbox" name="chkActivo" class="form-check" {{item.activo|yesno:"checked,"}}>
             </div>
         </div>
         <div class="row">

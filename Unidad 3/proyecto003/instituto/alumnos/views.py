@@ -122,8 +122,8 @@ def buscarEscuela(request, pk):
 def buscarCarrera(request, pk):
     context = {}
     try:
-        item = Carrera.objects.get(pk = pk)
-        context['item'] = item
+        context['escuelas'] = Escuela.objects.all()
+        context['item'] = Carrera.objects.get(pk = pk)
     except:
         context['error'] = 'Error al buscar el registro'
 
