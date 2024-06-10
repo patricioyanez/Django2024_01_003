@@ -7,3 +7,13 @@ class UsuarioForm(ModelForm):
     class Meta:
         model = Usuario
         fields= "__all__"
+        labels={
+            'apellido1': 'apellido Paterno',
+            'apellido2': 'apellido Materno',
+        }
+        widgets = {
+            'email' : forms.TextInput(attrs={
+                'class' : 'form-control',
+                'placeholder': 'ingrese su email'
+            })
+        }
