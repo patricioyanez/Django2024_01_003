@@ -114,7 +114,7 @@ def guardarUsuario(request):
     context = {'form': UsuarioForm()}
     if request.method == 'POST':
         if 'btnGuardar' in request.POST:
-            form = UsuarioForm(request.POST)
+            form = UsuarioForm(request.POST, request.FILES)
             if form.is_valid():
                 form.save()
                 context['exito'] = "Los datos fueron guardados"

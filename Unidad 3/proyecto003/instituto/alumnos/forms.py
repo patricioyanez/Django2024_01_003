@@ -15,5 +15,17 @@ class UsuarioForm(ModelForm):
             'email' : forms.TextInput(attrs={
                 'class' : 'form-control',
                 'placeholder': 'ingrese su email'
+            }),
+            'nombre' : forms.TextInput(attrs={
+                'class' : 'form-control',
+                'placeholder': 'ingrese su nombre'
+            }),
+            'apellido1' : forms.TextInput(attrs={
+                'class' : 'form-control',
+                'placeholder': 'ingrese su primer apellido'
+            }),
+            'apellido2' : forms.TextInput(attrs={
+                'class' : 'form-control',
+                'placeholder': 'ingrese su 2do apellido'
             })
         }

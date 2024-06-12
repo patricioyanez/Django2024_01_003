@@ -16,7 +16,7 @@
     {% endif %}
 {% endblock %}
 {% block contenido  %}
-    <form action="{#% url 'guardarEscuela' %#}" method="post">
+    <form action="{% url 'guardarUsuario' %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="row">
             <div class="col-12 col-md-6 offset-md-3">
@@ -30,7 +30,7 @@
             <div class="col-12 col-md-5">
                 <input type="submit" name="btnGuardar" class="btn btn-danger" value="Guardar">
                 <input type="submit" name="btnLimpiar" class="btn btn-outline-secondary" value="Limpiar">
-                <a href="{% url 'listarEscuela' %}" class="btn btn-success">Listar</a>
+                <a href="{#% url 'listarUsuario' %#}" class="btn btn-success">Listar</a>
             </div>
         </div>
     </form>
@@ -39,3 +39,4 @@
 {% endblock %}
 
 {# agregar clases de bootstrap al formulario #}
+{# Ejercicio 25: listar los usuarios y mostrar img #}
