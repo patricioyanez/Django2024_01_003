@@ -1,4 +1,5 @@
 {% extends "plantillaBase.html"  %}
+{% load static %}
 {% block tituloPestana %} Usuario {% endblock %}
 {% block tituloPrincipal %} Usuario {% endblock %}
 {% block mensaje    %}
@@ -36,6 +37,29 @@
     </form>
 {% endblock %}
 {% block listado    %}
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-responsive">
+                <tr>
+                    <td>Imagen</td>
+                    <td>Email</td>
+                    <td>Nombre</td>
+                    <td>Modificar</td>
+                    <td>Eliminar</td>
+                </tr>
+{% for usuario in listado %}
+                <tr>
+                    <td><img src="/media/{{usuario.foto}}" alt="imagen no disponible" width="100px" height="100px"></td>
+                    <td>{{usuario.email}}</td>
+                    <td>{{usuario.nombre}}</td>
+                    <td><a href="#">Modificar</a></td>
+                    <td><a href="#">Eliminar</a></td>
+                </tr>
+{% endfor %}
+            </table>
+        </div>
+    </div>
+
 {% endblock %}
 
 {# agregar clases de bootstrap al formulario #}

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Alumno, Carrera, Escuela
+from .models import Alumno, Carrera, Escuela, Usuario
 from .forms import UsuarioForm
 # Create your views here.
 def menu(request):
@@ -120,6 +120,7 @@ def guardarUsuario(request):
                 context['exito'] = "Los datos fueron guardados"
             else:
                 context['error'] = "Error al guardar los datos"
+    context['listado'] = Usuario.objects.all()
     return render(request, 'guardarUsuarioForm.html', context)
 
 def buscarEscuela(request, pk):
