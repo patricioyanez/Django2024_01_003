@@ -41,19 +41,19 @@
         <div class="col-12">
             <table class="table table-responsive">
                 <tr>
-                    <td>Imagen</td>
-                    <td>Email</td>
-                    <td>Nombre</td>
-                    <td>Modificar</td>
-                    <td>Eliminar</td>
+                    <th>Imagen</th>
+                    <th>Email</th>
+                    <th>Nombre</th>
+                    <th>Modificar</th>
+                    <th>Eliminar</th>
                 </tr>
 {% for usuario in listado %}
                 <tr>
-                    <td><img src="/media/{{usuario.foto}}" alt="imagen no disponible" width="100px" height="100px"></td>
+                    <td><img src="{{MEDIA_URL}}{{usuario.foto}}" alt="imagen no disponible" width="100px" height="100px"></td>
                     <td>{{usuario.email}}</td>
                     <td>{{usuario.nombre}}</td>
                     <td><a href="#">Modificar</a></td>
-                    <td><a href="#">Eliminar</a></td>
+                    <td><a href="{% url 'eliminarUsuario' pk=usuario.pk %}" class="btn btn-danger">Eliminar</a></td>
                 </tr>
 {% endfor %}
             </table>
@@ -64,3 +64,6 @@
 
 {# agregar clases de bootstrap al formulario #}
 {# Ejercicio 25: listar los usuarios y mostrar img #}
+
+{# Ejercicio 26: agregar boton para modificar y eliminar usuario #}
+{# Ejercicio 27: agregar link para acceder a formulario de usuario #}

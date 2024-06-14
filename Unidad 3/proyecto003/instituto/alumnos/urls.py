@@ -12,6 +12,7 @@ urlpatterns = [
     path('ingresarCarrera', views.ingresarCarrera, name='ingresarCarrera'), 
     path('eliminarEscuela/<str:pk>', views.eliminarEscuela, name='eliminarEscuela'), 
     path('eliminarCarrera/<str:pk>', views.eliminarCarrera, name='eliminarCarrera'), 
+    path('eliminarUsuario/<str:pk>', views.eliminarUsuario, name='eliminarUsuario'), 
     path('buscarEscuela/<str:pk>', views.buscarEscuela, name='buscarEscuela'), 
     path('buscarCarrera/<str:pk>', views.buscarCarrera, name='buscarCarrera'), 
     path('guardarEscuela', views.guardarEscuela, name='guardarEscuela'), 

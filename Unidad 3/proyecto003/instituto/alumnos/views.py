@@ -1,6 +1,10 @@
 from django.shortcuts import render
+
+from instituto.settings import MEDIA_URL
 from .models import Alumno, Carrera, Escuela, Usuario
 from .forms import UsuarioForm
+
+
 # Create your views here.
 def menu(request):
     return render(request, 'plantillaBase.html', {})
@@ -62,6 +66,20 @@ def eliminarCarrera(request, pk):
     context['listado'] = Carrera.objects.all()
     return render(request, 'listarCarrera.html', context)
 
+def eliminarUsuario(request, pk):
+    context = {}
+    try:
+        item = Usuario.objects.get(pk = pk)
+        item.delete()
+        context['exito'] = "El item fue eliminado"
+    except:
+        context['error'] = "El item NO fue eliminado"
+
+    context['listado'] = Usuario.objects.all()
+    context['form'] = UsuarioForm()
+    context['MEDIA_URL'] = MEDIA_URL # AGREGAR: from instituto.settings import MEDIA_URL
+    return render(request, 'guardarUsuarioForm.html', context)
+
 def guardarEscuela(request):
     context = {}
     if request.method == 'POST':
@@ -121,6 +139,7 @@ def guardarUsuario(request):
             else:
                 context['error'] = "Error al guardar los datos"
     context['listado'] = Usuario.objects.all()
+    context['MEDIA_URL'] = MEDIA_URL # AGREGAR: from instituto.settings import MEDIA_URL
     return render(request, 'guardarUsuarioForm.html', context)
 
 def buscarEscuela(request, pk):
