@@ -15,6 +15,7 @@ urlpatterns = [
     path('eliminarUsuario/<str:pk>', views.eliminarUsuario, name='eliminarUsuario'), 
     path('buscarEscuela/<str:pk>', views.buscarEscuela, name='buscarEscuela'), 
     path('buscarCarrera/<str:pk>', views.buscarCarrera, name='buscarCarrera'), 
+    path('buscarUsuario/<str:pk>', views.buscarUsuario, name='buscarUsuario'), 
     path('guardarEscuela', views.guardarEscuela, name='guardarEscuela'), 
     path('guardarCarrera', views.guardarCarrera, name='guardarCarrera'), 
     path('guardarUsuario', views.guardarUsuario, name='guardarUsuario'), 

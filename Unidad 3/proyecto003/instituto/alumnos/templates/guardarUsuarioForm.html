@@ -19,6 +19,7 @@
 {% block contenido  %}
     <form action="{% url 'guardarUsuario' %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
+        <input type="hidden" name="txtId" value="0{{id}}">
         <div class="row">
             <div class="col-12 col-md-6 offset-md-3">
                 <table>
@@ -52,7 +53,7 @@
                     <td><img src="{{MEDIA_URL}}{{usuario.foto}}" alt="imagen no disponible" width="100px" height="100px"></td>
                     <td>{{usuario.email}}</td>
                     <td>{{usuario.nombre}}</td>
-                    <td><a href="#">Modificar</a></td>
+                    <td><a href="{% url 'buscarUsuario' pk=usuario.pk %}">Modificar</a></td>
                     <td><a href="{% url 'eliminarUsuario' pk=usuario.pk %}" class="btn btn-danger">Eliminar</a></td>
                 </tr>
 {% endfor %}

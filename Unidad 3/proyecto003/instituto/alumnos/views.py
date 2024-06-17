@@ -132,8 +132,11 @@ def guardarUsuario(request):
     context = {'form': UsuarioForm()}
     if request.method == 'POST':
         if 'btnGuardar' in request.POST:
-            form = UsuarioForm(request.POST, request.FILES)
-            if form.is_valid():
+            if request.POST['txtId'] != "0":
+                item = Usuario.objects.get(pk=request.POST['txtId'])
+
+            form = UsuarioForm(request.POST, request.FILES, instance=item)
+            if form.is_valid():                
                 form.save()
                 context['exito'] = "Los datos fueron guardados"
             else:
@@ -161,3 +164,15 @@ def buscarCarrera(request, pk):
         context['error'] = 'Error al buscar el registro'
 
     return render(request, 'guardarCarrera.html', context)
+    
+def buscarUsuario(request, pk):
+    context = {}
+    try:
+        item = Usuario.objects.get(pk=pk)
+        context['form'] = UsuarioForm(instance=item)
+    except:
+        context['error'] = 'Error al buscar el registro'
+    context['id'] = pk    
+    context['listado'] = Usuario.objects.all()
+    context['MEDIA_URL'] = MEDIA_URL # AGREGAR: from instituto.settings import MEDIA_URL
+    return render(request, 'guardarUsuarioForm.html', context)
