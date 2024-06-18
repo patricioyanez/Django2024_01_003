@@ -1,0 +1,22 @@
+{% extends "plantillaBase.html"  %}
+{% block tituloPestana %} Login {% endblock %}
+{% block tituloPrincipal %} Login {% endblock %}
+{% block mensaje    %}    
+{% endblock %}
+{% block contenido  %}  
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        <center>
+        <table class="table table-reponsive">
+            {{form.as_table}}
+
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Aceptar"></td>
+            </tr>
+        </table>
+        </center>
+    </form>
+{% endblock %}
+{% block listado    %}
+{% endblock %}

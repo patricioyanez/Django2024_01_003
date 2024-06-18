@@ -16,10 +16,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
+# login/logout
+    path('', auth_views.LoginView.as_view(redirect_authenticated_user=True)),
+    path('accounts/', include('django.contrib.auth.urls')),
+
     path('admin/', admin.site.urls),
     path('alumnos/', include('alumnos.urls')),
+
 ]
 # agregar las importaciones:
 #from django.conf import settings
@@ -27,3 +33,6 @@ urlpatterns = [
 from django.conf import settings
 from django.conf.urls.static import static
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+# ejercicio 30: Agregar el logout
