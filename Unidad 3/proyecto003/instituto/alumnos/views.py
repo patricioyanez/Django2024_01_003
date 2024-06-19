@@ -132,6 +132,7 @@ def guardarUsuario(request):
     context = {'form': UsuarioForm()}
     if request.method == 'POST':
         if 'btnGuardar' in request.POST:
+            item = None
             if request.POST['txtId'] != "0":
                 item = Usuario.objects.get(pk=request.POST['txtId'])
 
