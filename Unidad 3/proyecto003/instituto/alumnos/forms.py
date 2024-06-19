@@ -8,8 +8,8 @@ class UsuarioForm(ModelForm):
         model = Usuario
         fields= "__all__"
         labels={
-            'apellido1': 'apellido Paterno',
-            'apellido2': 'apellido Materno',
+            'apellido1': '1er Apellido',
+            'apellido2': '2do Apellido',
         }
         widgets = {
             'email' : forms.TextInput(attrs={
@@ -26,6 +26,9 @@ class UsuarioForm(ModelForm):
             }),
             'apellido2' : forms.TextInput(attrs={
                 'class' : 'form-control',
-                'placeholder': 'ingrese su 2do apellido'
+                'placeholder': 'ingrese su segundo apellido'
+            }),
+            'foto' : forms.ClearableFileInput(attrs={
+                'class' : 'form-control'
             })
         }

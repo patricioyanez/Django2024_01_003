@@ -27,6 +27,8 @@
                 </table>
             </div>
         </div>
+        <p></p>
+        <p></p>
         <div class="row">
             <div class="col-12 col-md-2 offset-md-3">Opciones</div>
             <div class="col-12 col-md-5">
@@ -38,13 +40,16 @@
     </form>
 {% endblock %}
 {% block listado    %}
-    <div class="row">
+    <div class="row mt-5">
         <div class="col-12">
+
             <table class="table table-responsive">
                 <tr>
                     <th>Imagen</th>
                     <th>Email</th>
                     <th>Nombre</th>
+                    <th>1ra Apellido</th>
+                    <th>2do Apellido</th>
                     <th>Modificar</th>
                     <th>Eliminar</th>
                 </tr>
@@ -53,6 +58,8 @@
                     <td><img src="{{MEDIA_URL}}{{usuario.foto}}" alt="imagen no disponible" width="100px" height="100px"></td>
                     <td>{{usuario.email}}</td>
                     <td>{{usuario.nombre}}</td>
+                    <td>{{usuario.apellido1}}</td>
+                    <td>{{usuario.apellido2}}</td>
                     <td><a href="{% url 'buscarUsuario' pk=usuario.pk %}">Modificar</a></td>
                     <td><a href="{% url 'eliminarUsuario' pk=usuario.pk %}" class="btn btn-danger">Eliminar</a></td>
                 </tr>
