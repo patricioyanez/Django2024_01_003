@@ -4,17 +4,20 @@ from instituto.settings import MEDIA_URL
 from .models import Alumno, Carrera, Escuela, Usuario
 from .forms import UsuarioForm
 
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+@login_required
 def menu(request):
     return render(request, 'plantillaBase.html', {})
 
 def index(request):
     alumnos = Alumno.objects.all() # select * from alumno
     context = {"alumnos":alumnos}
-    print(alumnos)
     return render(request, 'index.html', context)
 
+
+@login_required
 def listarAlumnos(request):
     # utilizar ORM de Django
     # select * from alumno
@@ -24,24 +27,29 @@ def listarAlumnos(request):
 
     return render(request, 'listarAlumnos.html', context)
 
+@login_required
 def listarCarrera(request):
     listado = Carrera.objects.all()
     context = {'listado': listado}
     return render(request, 'listarCarrera.html', context)
 
+@login_required
 def listarEscuela(request):
     listado = Escuela.objects.all()
     context = {'listado': listado}
     return render(request, 'listarEscuela.html', context)
 
+@login_required
 def ingresarEscuela(request):
     return render(request, 'ingresarEscuela.html', {})
 
+@login_required
 def ingresarCarrera(request):
     escuelas = Escuela.objects.all()
     context = {'escuelas': escuelas}
     return render(request, 'guardarCarrera.html', context)
 
+@login_required
 def eliminarEscuela(request, pk):
     context = {}
     try:
@@ -54,6 +62,7 @@ def eliminarEscuela(request, pk):
     context['listado'] = Escuela.objects.all()
     return render(request, 'listarEscuela.html', context)
 
+@login_required
 def eliminarCarrera(request, pk):
     context = {}
     try:
@@ -66,6 +75,7 @@ def eliminarCarrera(request, pk):
     context['listado'] = Carrera.objects.all()
     return render(request, 'listarCarrera.html', context)
 
+@login_required
 def eliminarUsuario(request, pk):
     context = {}
     try:
@@ -80,6 +90,7 @@ def eliminarUsuario(request, pk):
     context['MEDIA_URL'] = MEDIA_URL # AGREGAR: from instituto.settings import MEDIA_URL
     return render(request, 'guardarUsuarioForm.html', context)
 
+@login_required
 def guardarEscuela(request):
     context = {}
     if request.method == 'POST':
@@ -105,6 +116,7 @@ def guardarEscuela(request):
 
     return render(request, 'guardarEscuela.html', context)
 
+@login_required
 def guardarCarrera(request):
     context = {}
     context['escuelas'] = Escuela.objects.all()
@@ -128,6 +140,7 @@ def guardarCarrera(request):
 
     return render(request, 'guardarCarrera.html', context)
 
+@login_required
 def guardarUsuario(request):
     context = {'form': UsuarioForm()}
     if request.method == 'POST':
@@ -146,6 +159,7 @@ def guardarUsuario(request):
     context['MEDIA_URL'] = MEDIA_URL # AGREGAR: from instituto.settings import MEDIA_URL
     return render(request, 'guardarUsuarioForm.html', context)
 
+@login_required
 def buscarEscuela(request, pk):
     context = {}
     try:
@@ -156,6 +170,7 @@ def buscarEscuela(request, pk):
 
     return render(request, 'guardarEscuela.html', context)
 
+@login_required
 def buscarCarrera(request, pk):
     context = {}
     try:
@@ -166,6 +181,7 @@ def buscarCarrera(request, pk):
 
     return render(request, 'guardarCarrera.html', context)
     
+@login_required
 def buscarUsuario(request, pk):
     context = {}
     try:
